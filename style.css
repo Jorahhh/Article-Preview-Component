@@ -1,0 +1,264 @@
+:root{
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%); /*primary text */
+    --desaturatedDarkBlue: hsl(214, 17%, 51%);
+    --grayishBlue: hsl(212, 23%, 69%);
+    --lightGrayishBlue: hsl(210, 46%, 95%); /*backgroundColor*/
+}
+
+/*CSS RESET*/
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*,
+*::before,
+*::after{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3{
+    margin-top: 0;
+}
+
+body{
+    background-color: var(--lightGrayishBlue);
+    font-family: 'Manrope', sans-serif;
+    padding: 0;
+    max-height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 6rem auto;
+    width: 20rem;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.image {
+    margin: 0;
+    padding: 0;
+}
+.image img{
+    padding: 0;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.text{
+    padding: 5% 8% 0 8%;
+    text-align: left;
+}
+
+.text h1{
+    color: var(--veryDarkGrayishBlue);
+    font-size: 1.1rem;
+}
+
+.text p{
+    color: var(--desaturatedDarkBlue);
+    font-size: 0.9rem;
+    margin-bottom: 8%;
+}
+
+.account_section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2rem;
+    align-items: center;
+    align-content: center;
+    padding: 4% 0;
+}
+
+.avatar_image{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    margin-right: 1rem;
+    margin-top: 0;
+}
+
+.avatar_image img{
+    width: 100%;
+}
+
+.account_text{
+    margin-right: 4.2rem;
+}
+
+.account_text p{
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--veryDarkGrayishBlue);
+}
+
+.account_text span{
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--desaturatedDarkBlue);
+}
+
+.account_section .share_section {
+    background-color: var(--lightGrayishBlue);
+    border-radius: 80%;
+    padding: 0.4rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+#share_icon {
+    color: var(--veryDarkGrayishBlue);
+    position: relative;
+    z-index: 10;
+}
+
+.account_section\.active{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem 2rem;
+    position: absolute;
+    width: 20rem;
+    height: 4rem;
+    transform: translateY(-100%) translateX(-50%);
+    background-color: var(--veryDarkGrayishBlue);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.account_section\.active svg{
+    color: var(--lightGrayishBlue);
+    cursor: pointer;
+    margin-right: 0.6rem;
+}
+
+.account_section\.active svg:hover{
+    color: var(--desaturatedDarkBlue);
+}
+
+.account_section\.active span{
+    letter-spacing: .4rem;
+    font-size: 0.9rem;
+    color: var(--desaturatedDarkBlue);
+    margin-right: .7rem;
+}
+
+
+
+@media screen and (min-width: 38em){
+
+    body{
+        margin: 0;
+    }
+
+    main{
+        flex-direction: row;
+        max-width: 40rem;
+        min-width: 40rem;
+        margin: 12em auto;
+    }
+
+    .image {
+        width: 130%;
+        height: 18rem;
+        overflow: hidden;
+        min-width: 15rem;
+        max-width: 40rem;
+    }
+
+    .image img{
+        height: 100%;
+        width: 20rem;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .text h1{
+        margin-bottom: 6%;
+    }
+
+    .text{
+        padding: 3%;
+    }
+
+    .text p{
+        margin-bottom: 5%;
+    }
+
+    .account_section{
+        justify-content: initial;
+        align-items: center;
+        padding: 0;
+        margin-top: 2rem;
+        line-height: 0.8rem;
+    }
+
+    .avatar_image{
+        width: 12%;
+        height: 12%;
+    }
+
+    .account_text{
+        margin-right: 8rem;
+    }
+
+    .account_section\.active{
+        padding: 0.6rem;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        height: 3rem;
+        width: 13rem;
+        transform: translateX(-76%) translateY(30%);
+        border-radius: 10px;
+    }
+
+    .account_section\.active::before{
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 2rem;
+        bottom: -2rem;
+        left: 6rem;
+        border: .75rem solid transparent;
+        border-top: none;
+        z-index: 2;
+        border-bottom-color: var(--veryDarkGrayishBlue);
+        transform: rotate(180deg);
+        filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+    }
+
+
+    .account_section\.active span{
+        font-size: 0.7rem;
+    }
+
+    .account_section\.active svg{
+        width: 2rem;
+        margin-right: 0;
+    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
